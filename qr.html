@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Untitled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="js/vue.js" language="JavaScript"></script>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.qrcode.min.js"></script>
+		<script src="js/html2canvas.min.js" async="async"></script>
+	</head>
+	<body class="is-preload">
+		
+		<!-- Loader -->
+		<link rel="stylesheet" href="assets/css/loader.css" />
+		<div class="loader">
+		  <div class="container">
+		    <h1>🍊</h1>
+		    <p>摇匀</p>
+		    <p>再喝</p>
+		  </div>
+		</div>
+		
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" style="width: 30em;">
+						<span style="display: flex; position: fixed; top: 2em; right: 2em; opacity: 0.65; font-size: 0.8em;"><button class="button small" @click="screenShot" id="screenshot">保存网页截图</button></span>
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" style="width: 122px; height: 122px;" /></span>
+							<h1>Untitled</h1>
+						</header>
+						<h1>站内二维码生成</h1>
+						<div>
+							<label style="font-size: 1em;">选择页面</label>
+							<input type="radio" id="pay" name="switchPage" v-model="method" value="pay"/><label for="pay">支付页面</label>
+							<input type="radio" id="index" name="switchPage" v-model="method" value="index"/><label for="index">关于页</label>
+							<input type="radio" id="donate" name="switchPage" v-model="method" value="donate"/><label for="donate">捐赠页</label>
+						</div>
+						<br />
+						<div class="fields" style="opacity: 0.6;">
+							<div id="paysection" v-if="(method == 'pay')">
+								<p><input type="text" id="amount" placeholder="金额" v-model="amount" v-on:input="genqr"/></p>
+								<p><input type="text" id="from" placeholder="FROM" v-model="FROM" v-on:input="genqr"/></p>
+							</div>
+							<div id="indexsection" v-if="(method == 'index')">
+								<input type="checkbox" id="showContacts" name="showContacts" v-model="showContacts" v-on:change="genqr"/><label for="showContacts">自动显示联系信息</label>
+								<input type="text" id="page" placeholder="PAGE" v-model="page" v-on:input="genqr"/>
+							</div>
+							<div id="donatesection" v-if="(method == 'donate')">
+								<input type="text" id="from" placeholder="FROM" v-model="FROM" v-on:input="genqr"/>
+							</div>
+							<br />
+						</div>
+						<center>
+							<div id="qr" style="display: none;"></div>
+							<div id="qrcontainer" style="text-align: center; background-color: #e5e5e5; border-radius: 0.5em; padding: 1em 1em 0.5em 1em; width: max-content;"><img id="qrimg" /></div>
+							<p style="text-transform: lowercase; text-align: center;"><span style="width: 20em; word-wrap: break-word;">{{ texts }}</span></p>
+						</center>
+						<hr />
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright" style="opacity: 0.5;">
+							<li><a href="#">&copy; Untitled</a></li><li><small>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></small></li><li>Background: <a href="http://unsplash.com" target="_blank">Unsplash</a></li>
+						</ul>
+						<ul class="copyright" style="opacity: 0.5;">
+							<li>Untitled</li><li><a href="https://beian.miit.gov.cn/" target="_blank">备案号</a></li>
+							<li><iframe src="" style="height: 1.5em; width: 5em; border-radius: 0;" name="GitHubStar"></iframe></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { 
+						document.body.className = document.body.className.replace(/\bis-preload\b/, ''); 
+						document.querySelector("iframe[name='GitHubStar']").src = "https://ghbtns.com/github-btn.html?user=Jiaocz&repo=Personal-page&type=star&count=false";
+					});
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+		<!-- Vue.js -->
+			<script>
+				var mainsec = new Vue({
+					el: "#main",
+					data:{
+						method:"pay", // Default shows
+						FROM:"",
+						amount:"",
+						showContacts:"",
+						page:"",
+						texts:""
+					},
+					watch:{
+						method: function(){this.genqr()}
+					},
+					mounted:function(){
+						this.genqr()
+					},
+					methods:{
+						genqr: function(){
+							$("#qr").html("");
+							var texts = "https://example.com/"; // Base Link
+							if(this.method == "pay"){
+								texts = texts + "pay.html?";
+								if(this.amount){
+									texts = texts + "amount=" + this.amount +"&";
+								}
+								if(this.FROM){
+									texts = texts + "from=" + encodeURIComponent(this.FROM) +"&";
+								}
+							}
+							if(this.method == "index"){
+								texts = texts + "?";
+								if(this.page){
+									texts = texts + "page=" + this.page +"&";
+								}
+								if(this.showContacts){
+									texts = texts + "showContacts&";
+								}
+							}
+							if(this.method == "donate"){
+								texts = texts + "donate.html?";
+								if(this.FROM){
+									texts = texts + "from=" + encodeURIComponent(this.FROM) +"&";
+								}
+							}
+							texts = texts.substr(0,texts.length-1);
+							jQuery("#qr").qrcode({
+								render:"canvas",
+								text: texts,
+								background: "#e5e5e5",
+								foreground: "#514d59"
+							});
+							this.texts = texts;
+							var canvas = document.getElementsByTagName('canvas')[0].toDataURL('image/jpg');
+							document.getElementById("qrimg").src = canvas;
+							
+						},
+						screenShot: function(){
+							var button = document.getElementById("screenshot");
+							var imgbase64;
+							button.disabled = true;
+							button.innerHTML = "截图中…";
+							html2canvas(document.querySelector("body")).then(canvas => {
+								canvas.style.display="none";
+								document.body.appendChild(canvas);
+							});
+							setTimeout(function(){
+								imgbase64 = document.getElementsByTagName('canvas')[1].toDataURL('image/jpg');
+								var w = window.open();
+								w.document.title = "保存截图";
+								var i = w.document.createElement("img");
+								w.document.body.appendChild(i);
+								i.src = imgbase64;
+								document.getElementsByTagName('canvas')[1].remove();
+								w.alert("长按图片或直接保存图片即可");
+								button.innerHTML = "保存网页截图";
+								button.disabled = false;
+							},800);
+								
+						}
+					},
+				});
+			</script>
+
+	</body>
+</html>

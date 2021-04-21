@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Orangii|橙梓：作品展示</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="../favicon.ico" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<meta name="Keywords" content="橙梓,J-橙梓,Orangii,orangii,Orangii橙梓,Orangii|橙梓" />
+		<meta name="Description" content="我是橙梓，又称Orangii，是个学生，我可能会做网页写程序剪视频和做图片。" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script src="../js/vue.min.js"></script>
+		<style>
+			#main{
+				width: 60%;
+				min-width: 27em;
+				max-width: 45em;
+				border-radius: 8px;
+			}
+			#content_footer{
+				font-size: 0.8em;
+			}
+			.slide-fade-enter-active, .slide-fade-leave-active {
+				transition: all .3s ease-in-out;
+				}
+			.slide-fade-enter {
+				transform: translateX(5em);
+				opacity: 0;
+				height: 0px;
+			}
+			.slide-fade-leave-to{
+				transform: translateX(-5em);
+				opacity: 0;
+				height: 0px;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		
+		<!-- Loader -->
+		<link rel="stylesheet" href="../assets/css/loader.css" />
+		<div class="loader">
+		  <div class="container">
+		    <h1>🍊</h1>
+		    <p>摇匀</p>
+		    <p>再喝</p>
+		  </div>
+		</div>
+		<script>window.addEventListener("load",()=>document.getElementById("loader").style.display="none");</script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="../images/t_red.jpg" alt="" style="width: 122px; height: 122px;" /></span>
+							<h1>Orangii 橙梓</h1>
+							<h2><b v-text="title">作品展示</b></h2>
+						</header>
+						
+						<hr />
+						
+						<transition-group name="slide-fade">
+							<div v-show="loading" key="loading-container">
+								<div key="content">
+									<h1>加载中……</h1>
+									<p>Loading contents...</p>
+								</div>
+								<hr />
+							</div>
+						</transition-group>
+						
+						<transition-group name="slide-fade">
+							<div v-show="!loading" key="content-container">
+								<div id="content" name="content" v-html="content" key="content"></div>
+								<hr />
+								<div id="content_footer" name="footer" v-html="footer" key="footer"></div>
+							</div>
+						</transition-group>
+						
+						<button class="fit" style="cursor: pointer; widows: 60%;" onClick="window.location.href='/'">返回首页</button>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright" style="opacity: 0.5;">
+							<li><a href="https://orangii.cn">&copy; Orangii</a></li><li><small>Design: <a href="http://html5up.net">HTML5 UP</a></small></li><li>Background: <a href="http://unsplash.com" target="_blank">Unsplash</a></li>
+						</ul>
+						<ul class="copyright" style="opacity: 0.5;">
+							<li>关于橙梓</li><li><a href="http://www.beian.miit.gov.cn/" target="_blank">冀ICP备17024488号-3</a></li><li><a href="https://myssl.com/orangii.cn" target="_blank"><i class="fa fa-lock"></i>Safe</a></li>
+							<li><iframe src="" style="height: 1.5em; width: 5em; border-radius: 0;" name="GitHubStar"></iframe></li>
+						</ul>
+						<img src="https://stat.orangii.cn/orangii/stat.png" style="height: 0px; width: 0px;" />
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+						window.addEventListener('load', function() { 
+							document.body.className = document.body.className.replace(/\bis-preload\b/, ''); 
+							$.getScript("LoadContent.js");
+							document.querySelector("iframe[name='GitHubStar']").src = "https://ghbtns.com/github-btn.html?user=Jiaocz&repo=Personal-page&type=star&count=false";
+						});
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+			<script>
+				function getQueryVariables(variable){
+					var query = window.location.search.substring(1);
+					var vars = query.split("&");
+					for (var i=0;i<vars.length;i++) {
+						var pair = vars[i].split("=");
+						if(pair[0] == variable){
+							if(pair[1]) return pair[1];
+							else return true;
+						}
+					}
+					return(false);
+				}
+			</script>
+	</body>
+</html>

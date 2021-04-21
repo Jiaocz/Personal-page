@@ -1,0 +1,102 @@
+/*
+  See this animation on Codepen.io
+  https://codepen.io/Orangii/pen/vYgWXJZ
+*/
+
+:root {
+  --loader-scale: 0.6;
+  --loader-width: 15em;
+  --loader-height: 20em;
+  --loading-animation-time: 0.8s;
+}
+
+.is-preload .loader{
+	opacity: 1;
+	z-index: 999;
+}
+
+.loader {
+  width: 100%;
+  min-width: var(--loader-width);
+
+  transition: all 0.5s ease-in-out;
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: calc(50% - 10em);
+  transform: scale(var(--loader-scale), var(--loader-scale));
+  
+  z-index: -999;
+  opacity: 0;
+}
+
+.loader h1 {
+  font-size: 5em;
+  margin: 0;
+  animation: loading var(--loading-animation-time) infinite
+    calc(var(--loading-animation-time) / 20) ease-in-out;
+
+  transition: all 1s ease-in-out;
+}
+
+.loader p {
+  font-size: 4em;
+  margin: 0;
+  color: #fff;
+
+  animation: loading var(--loading-animation-time) infinite ease-in-out;
+  transition: all 0.4s ease-out;
+  transition-delay: 0.4s;
+}
+
+.loader .container {
+  width: var(--loader-width);
+  line-height: 1.2;
+}
+
+.loader .container::after {
+  content: "";
+  display: block;
+  width: var(--loader-width);
+  height: var(--loader-height);
+  border: 2px solid #fff;
+  border-radius: 0 0 15px 15px;
+  border-top: 3px dotted #fff;
+  position: absolute;
+  top: -1em;
+
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, transparent 35%),
+    linear-gradient(-90deg, rgba(185, 185, 185, 0.18) 0%, transparent 35%),
+	linear-gradient(0deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+}
+
+.loader .container:hover h1 {
+  padding-top: 1em;
+}
+
+.loader .container:hover p {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.loader .container::after,
+.loader .container::before {
+  animation: loading var(--loading-animation-time)
+    calc(var(--loading-animation-time) / 12) infinite ease-in-out;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    transform: translate(-10px, 0) rotatez(-1.5deg);
+  }
+  50% {
+    transform: translate(10px, 0) rotatez(1.5deg);
+  }
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Untitled</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="js/vue.min.js" language="JavaScript"></script>
+		<script src="js/html2canvas.min.js"></script>
+		<style>
+			.mountPart{
+				text-align: center;
+				background-color: #313131;
+				height: 80%;
+				border-radius: 1.6em;
+				letter-spacing: 0.5em;
+				line-height: 2em;
+				padding: 1em;
+				height: 6.5em;
+				opacity: 0.9;
+			}
+		</style>
+	</head>
+	<body class="is-preload" onload="loaded()">
+		
+		<!-- Loader -->
+		<link rel="stylesheet" href="assets/css/loader.css" />
+		<div class="loader">
+			<div class="container">
+			<h1>🍊</h1>
+			<p>摇匀</p>
+			<p>再喝</p>
+			</div>
+		</div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<span style="display: flex; position: fixed; top: 2em; right: 2em; opacity: 0.65; font-size: 0.8em;"><button class="button small" @click="screenShot" id="screenshot">保存网页截图</button></span>
+						<span style="display: flex; position: fixed; top: 2em; left: 2em; opacity: 0.4;" v-if="backButton"><button class="button small" onclick="toIndex()"><a>&lt;返回</a></button></span>
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" style="width: 122px; height: 122px;" /></span>
+							<h1>向 Someone 付款</h1>
+							<center class="mountPart" v-if="showAmount">
+								<b><span style="font-size: 3em; color: #25b684;">{{ intpart }}.</span><span style="font-size: 2.3em; color: #25b684;">{{ doublepart }}</span><span style="color: #fffff8; font-size: 2em;">元</span></b>
+								<p style="color: #cacaca; font-size: 0.9em;">设置的金额</p>
+							</center>
+							<br />
+							<transition-group name="fade">
+								<div v-html="text" v-show="defaults" key="text"></div>
+								<div v-for="item in method" v-show="item.show" key="item.name" v-html="item.content"></div>
+								<button class="button small" key="button" v-show="buttonShow" @click="hideMethod(true)" style="opacity: 0.55;">返回</button>
+							</transition-group>
+						</header>
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li v-for="item in method"><a @click="showMethod(item.name)" :class="item.icon">{{item.desc}}</a></li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright" style="opacity: 0.5;">
+						<li><a href="#">&copy; Untitled</a></li><li><small>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></small></li><li>Background: <a href="http://unsplash.com" target="_blank">Unsplash</a></li>
+					</ul>
+					<ul class="copyright" style="opacity: 0.5;">
+						<li>Untitled</li><li><a href="https://beian.miit.gov.cn/" target="_blank">备案号</a></li>
+						<li><iframe src="" style="height: 1.5em; width: 5em; border-radius: 0;" name="GitHubStar"></iframe></li>
+					</ul>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { 
+						document.body.className = document.body.className.replace(/\bis-preload\b/, ''); 
+						document.querySelector("iframe[name='GitHubStar']").src = "https://ghbtns.com/github-btn.html?user=Jiaocz&repo=Personal-page&type=star&count=false";
+					});
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+		<!-- Vue.js -->
+			<script>
+				var mainsec = new Vue({
+					el:'#main',
+					data:{
+						defaults: 1,
+
+						/*              Change things here             */
+						// Show when loaded
+						text:"<p>您可以使用微信/支付宝/QQ打开本页面，将会自动跳转到对应二维码<b style=\"color:red;\">不推荐使用<u>QQ钱包</u>付款</b>，<b style=\"color:#4ADEDE;\">推荐使用<u>支付宝</u></p>",
+						// Payments
+						method:[
+							{
+								name:"Alipay",
+								icon:"icon brands fa-alipay",
+								desc:"支付宝",
+								content:"<img src=\"images/demoQR.png\" class=\"qr\" /><br /><h2><a href=\"alipayqr://platformapi/startapp?saId=10000007&qrcode=null\"><u>支付宝[点击即可打开]</u></a></h2>",
+								show: false
+							},
+							{
+								name:"Wechat",
+								icon:"icon brands fa-weixin",
+								desc:"微信支付",
+								content:"<img src=\"images/demoQR.png\" class=\"qr\" /><br /><h2>微信</h2>",
+								show:false
+							},
+							{
+								name:"QQ",
+								icon:"icon brands fa-qq",
+								desc:"QQ钱包",
+								content:"<img src=\"images/demoQR.png\" class=\"qr\" /><br /><h2>QQ钱包</h2>",
+								show:false
+							}
+						],
+						/*           Change ends here               */
+
+						buttonShow:0,
+						backButton:0,
+						deg:0,
+						fromurl:"",
+						intpart:"",
+						doublepart:"",
+						showAmount:0
+					},
+					methods: {
+						showMethod: function(name){
+							this.defaults = 0
+							this.hideMethod(false)
+							let num = 0;
+							for(num = 0; num < this.method.length; num++){
+								if(this.method[num].name == name){
+									break;
+								}
+							}
+							clearTimeout(this.timer)
+							this.timer = setTimeout(()=>{
+								this.method[num].show = true
+								this.buttonShow = 1
+							},500)
+							
+						},
+						hideMethod: function(neededDefault = true){
+							for(let i = 0; i < this.method.length; i++){
+								this.method[i].show = false
+							}
+							clearTimeout(this.timer)
+							if(neededDefault == true){
+								this.buttonShow = false
+								this.timer = setTimeout(()=>{
+									this.defaults = 1
+								},500)
+							}
+						},
+						rotateCard: function(deg,time,axis){
+							this.deg += deg
+							var ele = document.getElementById('main')
+							ele.style.transition = "all " + time + "s 0s"
+							ele.style.transform = "rotate" + axis + "(" +this.deg + "deg)"
+						},
+						screenShot: function(){
+							var button = document.getElementById("screenshot");
+							var imgbase64;
+							button.disabled = true;
+							button.innerHTML = "截图中…";
+							html2canvas(document.querySelector("body")).then(canvas => {
+								canvas.style.display="none";
+								document.body.appendChild(canvas);
+							});
+							setTimeout(function(){
+								imgbase64 = document.querySelector("canvas").toDataURL('image/jpg');
+								var w = window.open();
+								w.document.title = "保存截图";
+								var i = w.document.createElement("img");
+								w.document.body.appendChild(i);
+								i.src = imgbase64;
+								document.querySelector("canvas").remove();
+								w.alert("长按图片或直接保存图片即可");
+								button.innerHTML = "保存网页截图";
+								button.disabled = false;
+							},800);
+								
+						}
+					}
+				});
+			</script>
+			<style>
+				.fade-enter-active, .fade-leave-active {
+					transition: all .5s;
+				}
+				.fade-enter, .fade-leave-to {
+					opacity: 0;
+					transform: scale(0%,0%);
+				}
+				.qr {
+					text-align: center;
+					width: 80%;
+					height: 80%;
+				}
+			</style>
+
+	</body>
+	<script>
+		function loaded(){
+			var url;
+			var browser = navigator.userAgent.toLowerCase();
+			if (browser.match(/MicroMessenger/i) == 'micromessenger') {
+				//微信浏览器
+				setTimeout(function(){mainsec.showMethod("Wechat")},1500);
+			} else if(browser.indexOf(' qq') != -1 && browser.indexOf('mqqbrowser') != -1){
+				//qq内置浏览器
+				setTimeout(function(){mainsec.showMethod("QQ")},1500);
+			} else if(/AlipayClient/.test(window.navigator.userAgent)){
+				//支付宝浏览器
+				setTimeout(function(){mainsec.showMethod("Alipay")},1500);
+				url = "#"; // Your Alipay link
+			}
+			if(url){
+				setTimeout(function(){
+					window.location.href=url
+				},2500);
+			}
+			
+			if(getQueryVariable("amount")){
+				mainsec.showAmount = 1;
+				mainsec.intpart = getQueryVariable("amount").split('.')[0];
+				mainsec.doublepart = getQueryVariable("amount").split('.')[1];
+			}
+		}
+	</script>
+	<script src="js/common.js"></script>
+</html>
