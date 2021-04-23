@@ -11,6 +11,7 @@
 主要内容都在注释`Change things here`和`Change ends here`注释之间，部分内容在js中使用双斜杠注释单独标出
 
 之后会开设Wiki指引修改。
+[其实现在就有一部分](https://github.com/Jiaocz/Personal-page/wiki)
 
 ## Features 特色
 
