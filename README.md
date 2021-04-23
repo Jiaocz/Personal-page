@@ -21,7 +21,7 @@
 
 ## Pages Description 页面说明
 
-### 首页 `index.html'
+### 首页 `index.html`
 网页首页，可选get参数： `showcontacts`（直接根据浏览器UA展示联系方式，如微信、QQ，原理在js/common.js中）、`page=<int>`（打开后直接展示某页内容）。但是需要修改一些地方
 
 ### 赞赏页 `donate.html`
