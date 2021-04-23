@@ -4,7 +4,7 @@
 
 这里是我的网站的模板页，您可以预览我的上线版本：https://orangii.cn/ 或在线观看模板效果：https://template.orangii.cn/
 
-您可以下载 (Release)[https://github.com/Jiaocz/Personal-page/releases] 中的压缩包获取整个模板（不包含上线版本的所有非演示图片，如二维码）。**上线版本具有一些特制小彩蛋，并没有放到模板中发布。**（不过可以跟着Wiki[某个页面加回来](https://github.com/Jiaocz/Personal-page/wiki/%E8%A2%AB%E5%88%A0%E5%8E%BB%E7%9A%84%E5%86%85%E5%AE%B9)）
+您可以下载 [Release](https://github.com/Jiaocz/Personal-page/releases) 中的压缩包获取整个模板（不包含上线版本的所有非演示图片，如二维码）。**上线版本具有一些特制小彩蛋，并没有放到模板中发布。**（不过可以跟着Wiki[某个页面加回来](https://github.com/Jiaocz/Personal-page/wiki/%E8%A2%AB%E5%88%A0%E5%8E%BB%E7%9A%84%E5%86%85%E5%AE%B9)）
 
 ## Screenshot 截图
 ![Screenshot](https://user-images.githubusercontent.com/14857984/115842686-a7885200-a450-11eb-8d33-653ac05ebb56.png)
