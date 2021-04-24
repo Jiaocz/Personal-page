@@ -16,15 +16,15 @@ function getQueryVariable(variable)
 }
 //using in pay/donate page to turn back to index
 function toIndex(){
-	mainsec.rotateCard(90,0.5,"Y");
-	setTimeout(function(){window.location.href=mainsec.fromurl},450)
+	// mainsec.rotateCard(90,0.5,"Y");
+	window.location.href=mainsec.fromurl;
 }
 //using in index to direct to donate page
 function todonate(){
 	var u = "index.html"+(getQueryVariable("page")?"?page="+getQueryVariable("page"):"");
 	u = encodeURIComponent(u);
-	mainsec.rotateCard(90,0.5,"Y");
-	setTimeout(function(){window.location.href="donate.html?from="+u},450)
+	// mainsec.rotateCard(90,0.5,"Y");
+	window.location.href="donate.html?from="+u;
 }
 //self run function to show the back button
 (function(){
@@ -49,3 +49,7 @@ if(getQueryVariable("showContacts")||getQueryVariable("showcontacts")){
 		}
 	})();
 }
+
+window.addEventListener("beforeunload",function(){
+	mainsec.rotateCard(90,0.4,"Y");
+})
