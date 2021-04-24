@@ -6,7 +6,9 @@
 
 您可以下载 [Release](https://github.com/Jiaocz/Personal-page/releases) 中的压缩包获取整个模板（不包含上线版本的所有非演示图片，如二维码）。**上线版本具有一些特制小彩蛋，并没有放到模板中发布。**（不过可以跟着Wiki[某个页面加回来](https://github.com/Jiaocz/Personal-page/wiki/%E8%A2%AB%E5%88%A0%E5%8E%BB%E7%9A%84%E5%86%85%E5%AE%B9)）
 
-此仓库包含有**介绍页面**、**收款码页面**和**赞赏页面**。
+_或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个链接](https://github.com/Jiaocz/Personal-page/wiki/%E4%BB%A5%E6%AD%A4%E6%A8%A1%E6%9D%BF%E4%B8%BA%E5%9F%BA%E7%A1%80%E9%80%9A%E8%BF%87GitHub-pages%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5)的指引_
+
+此模板包含有**介绍页面**、**收款码页面**和**赞赏页面**。[在这里查看页面的详细介绍](https://github.com/Jiaocz/Personal-page/wiki/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E6%A8%A1%E6%9D%BF%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 
 ## Screenshot 截图
 ![Screenshot](https://user-images.githubusercontent.com/14857984/115842686-a7885200-a450-11eb-8d33-653ac05ebb56.png)
@@ -17,6 +19,8 @@
 - 有动画，看着很高级……
 - 使用过Vue、jQuery等，看着用着都很高级……
 - 等我以后再编
+
+[详细介绍>](https://github.com/Jiaocz/Personal-page/wiki/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E6%A8%A1%E6%9D%BF%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 
 ## How to change 如何修改内容
 
