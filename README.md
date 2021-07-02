@@ -20,6 +20,8 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 - 使用过Vue、jQuery等，看着用着都很高级……
 - 等我以后再编
 
+(你可能没发现，但是加载动画的时候摇一摇会把杯子里的东西要出去，当然，可能会失败，因为Chrome手机版就不支持摇晃操作)
+
 [详细介绍>](https://github.com/Jiaocz/Personal-page/wiki/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E6%A8%A1%E6%9D%BF%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 
 ## How to change 如何修改内容
