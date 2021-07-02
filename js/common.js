@@ -2,7 +2,7 @@
 // See https://github.com/Jiaocz/Personal-page/wiki/js-common.js%E7%9A%84%E8%A7%A3%E9%87%8A
 (function(){
 	var se = document.createElement("script");
-	se.type = "text/javascript"; se.defer = true;
+	se.type = "text/javascript";
 	se.src = "/js/loader.js";
 	document.getElementsByTagName("head")[0].appendChild(se);
 })();
