@@ -9,6 +9,35 @@
 		scrollbar-width: none;
 	}
 
+	/* gradient in title */
+	.avatar ~ h1{
+		
+		font-family: "思源黑体 CN";
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		background-image: 
+			linear-gradient(90deg, 
+			#f0a1a8 0%, 
+			#f09c5a 25%, 
+			#83cbac 50%,
+			#f09c5a 75%,
+		    #f0a1a8 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 200%;
+		animation: title-flow 2.5s linear infinite;
+	}
+
+	@keyframes title-flow {
+		0% {
+			background-position: 0%;
+		}
+		100% {
+			background-position: 200%;
+		}
+	}
+
 /*
 	Identity by HTML5 UP
 	html5up.net | @ajlkn
