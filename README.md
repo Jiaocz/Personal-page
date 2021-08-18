@@ -11,7 +11,7 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 此模板包含有**介绍页面**、**收款码页面**和**赞赏页面**。[在这里查看页面的详细介绍](https://github.com/Jiaocz/Personal-page/wiki/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E6%A8%A1%E6%9D%BF%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 
 ## Screenshot 截图
-![Screenshot](https://user-images.githubusercontent.com/14857984/115842686-a7885200-a450-11eb-8d33-653ac05ebb56.png)
+![ScreenShot](https://user-images.githubusercontent.com/14857984/129847923-33ea7ccd-90ae-48a1-864c-464bf170bc0d.png)
 
 ## Features 特色
 
