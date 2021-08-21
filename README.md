@@ -24,11 +24,13 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 
 [详细介绍>](https://github.com/Jiaocz/Personal-page/wiki/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E6%A8%A1%E6%9D%BF%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D)
 
-## How to change 如何修改内容
+## How to use 如何使用？
 
-主要内容都在注释`Change things here`和`Change ends here`注释之间，部分内容在js中使用双斜杠注释单独标出
+如需修改内容，可在源代码注释`Change things here`和`Change ends here`注释之间查看并修改，部分内容在js中使用双斜杠注释单独标出
 
-[在Wiki里有详细，不过不难](https://github.com/Jiaocz/Personal-page/wiki)
+[在Wiki里有详细修改教程，不难](https://github.com/Jiaocz/Personal-page/wiki)
+
+在2021年8月21日修改协议为BSD 3-clause，以防止一些人偷用并修改版权信息。再此希望使用代码时**注重作者的版权**，并保留页脚的Github源链接。
 
 ## 未来展望（无限未来）
 本来想做很多东西，就慢慢期待更新吧~
