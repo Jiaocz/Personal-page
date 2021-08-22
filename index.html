@@ -9,6 +9,11 @@
 		<script src="js/vue.min.js" language="JavaScript"></script>
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/html2canvas.min.js" async="async"></script>
+		<style>
+			img {
+				border-radius: 10px;
+			}
+		</style>
 	</head>
 
 	<body class="is-preload">
@@ -297,7 +302,9 @@
 				}
 			</style>
 			<script>
+				let FirstTriggered = true;
 				function loaded(){
+					timeout = FirstTriggered ? 1200 : 0;
 					var page = getQueryVariable("page");
 					if(page>=mainsec.startPage-1&&page<=mainsec.endPage-1&&page){
 						var m = mainsec
@@ -309,9 +316,29 @@
 								m.info = 1
 								m.Contacts = 0
 							},400)
-						},1200);
+						},timeout);
 					}
-					$("body").on("dblclick","img",function(){window.open(this.src)});
+					if(FirstTriggered){
+						$("body").on("dblclick","img",function(){window.open(this.src)});
+					}
+					if(getQueryVariable("showContacts")||getQueryVariable("showcontacts")){
+							var url;
+							var browser = navigator.userAgent.toLowerCase();
+							if(mainsec.info == 1){
+								mainsec.returnToContact()
+							}
+							if (browser.match(/MicroMessenger/i) == 'micromessenger') {
+								//微信浏览器
+								url = "https://u.wechat.com/EO3JtzoXctOZXiAG8tvYHuI";
+								setTimeout(function(){mainsec.showContact("Wechat")},1500);
+							} else if(browser.indexOf(' qq') != -1 && browser.indexOf('mqqbrowser') != -1){
+								//qq内置浏览器
+								url = "https://qm.qq.com/cgi-bin/qm/qr?k=OZm0covTGqrELIwI0XKV6LxlKsCcLIsm";
+								setTimeout(function(){mainsec.showContact("QQ")},1500);
+							}
+					}
+					
+					FirstTriggered = false
 				}
 			</script>
 			<script src="js/common.js"></script>
