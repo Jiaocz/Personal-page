@@ -38,6 +38,14 @@
 		}
 	}
 
+	#main p {
+		text-align: justify;
+	}
+
+	#main p::first-letter {
+		margin-left: 2em;
+	}
+
 /*
 	Identity by HTML5 UP
 	html5up.net | @ajlkn
@@ -245,7 +253,7 @@
 	}
 
 	p {
-		margin: 0 0 1.5em 0;
+		margin: 0 0 0.75em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
