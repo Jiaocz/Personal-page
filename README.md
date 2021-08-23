@@ -47,6 +47,8 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 - [ ] 样式预览页面及更方便的编辑方式 ~~（Ongoing, 预计2021年暑期完成）~~（我不预计了）
 - [ ] ...
 
+更新日志：[discussions->categories->更新日志](https://github.com/Jiaocz/Personal-page/discussions/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
+
 ## Credits
 - [Vue.js](https://vuejs.org/) : [GitHub](https://github.com/vuejs/vue)
 - [jQuery](https://jquery.com/) : [GitHub](https://github.com/jquery/jquery)
