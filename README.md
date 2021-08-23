@@ -1,6 +1,6 @@
-# Personal-page | 个人介绍页面
+<h1 align="center">🌈Personal-page | 个人介绍页面</h1>
 
-## Info 信息
+## Description 介绍
 
 这里是我的网站的模板页，您可以预览我的上线版本：https://orangii.cn/ 或在线观看模板效果：https://template.orangii.cn/
 
