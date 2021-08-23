@@ -1,5 +1,11 @@
-<h1 align="center">🌈Personal-page | 个人介绍页面</h1>
-<p align="center"><a href="https://github.com/Jiaocz/Personal-page/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jiaocz/personal-page" /></a>&nbsp;<a href="https://github.com/Jiaocz/Personal-page/releases"><img src="https://img.shields.io/github/v/release/jiaocz/personal-page.svg" /></a>&nbsp;<a href="https://github.com/Jiaocz/Personal-page/releases"><img src="https://img.shields.io/github/release-date/jiaocz/personal-page" /></a>&nbsp;<a href="https://github.com/Jiaocz/Personal-page"><img src="https://img.shields.io/github/stars/jiaocz/personal-page?style=social" /></a></p>
+<h1 align="center">🌈Personal-page | 个人介绍页</h1>
+<p align="center">
+  <a href="https://github.com/Jiaocz/Personal-page/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jiaocz/personal-page" /></a>&nbsp;
+  <a href="https://github.com/Jiaocz/Personal-page/releases"><img src="https://img.shields.io/github/v/release/jiaocz/personal-page.svg" /></a>&nbsp;
+  <a href="https://github.com/Jiaocz/Personal-page/commits/master"><img src="https://img.shields.io/github/commits-since/Jiaocz/personal-page/latest" /></a>&nbsp;
+  <a href="https://github.com/Jiaocz/Personal-page/commits/master"><img src="https://img.shields.io/github/commit-activity/m/Jiaocz/personal-page" /></a>&nbsp;
+  <a href="https://github.com/Jiaocz/Personal-page"><img src="https://img.shields.io/github/stars/jiaocz/personal-page?style=social" /></a>
+</p>
 
 ## Description 介绍
 
@@ -16,7 +22,7 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 
 ## Features 特色
 
-- 纯静态，CDN友好上甚至可以放到OSS中
+- 纯静态，CDN友好甚至可以放到OSS中
 - 有动画，看着很高级……
 - 使用过Vue、jQuery等，看着用着都很高级……
 - 等我以后再编
