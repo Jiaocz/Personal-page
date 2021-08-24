@@ -6,6 +6,12 @@
   <a href="https://github.com/Jiaocz/Personal-page/commits/master"><img src="https://img.shields.io/github/commit-activity/m/Jiaocz/personal-page" /></a>&nbsp;
   <a href="https://github.com/Jiaocz/Personal-page"><img src="https://img.shields.io/github/stars/jiaocz/personal-page?style=social" /></a>
 </p>
+<p align="center">
+  效果成图（我的网站）：<a href="https://orangii.cn/">https://orangii.cn/</a>
+</p>
+<p align="center">
+  模板初品（当前样子）：<a href="https://template.orangii.cn">https://template.orangii.cn/</a>
+</p>
 
 ## Description 介绍
 
@@ -59,3 +65,7 @@ _或者您可以直接在GitHub Pages生成您的网页，只需要跟随[这个
 
 **喜欢的话给个Star吧~**
 
+<!--
+Copyright (c) 2021, Orangii|橙梓
+All rights reserved.
+-->
