@@ -66,7 +66,7 @@ if ($ === undefined) {
 		success: (res) => {
 			document.querySelector('footer#footer').innerHTML = res
 			// Get secret
-			eval($.ajax({url:"https://gist.githubusercontent.com/Jiaocz/d59cdd9f9dd1dbc41bf6f409fee361ca/raw/fdcd6367ab184232b7c75499d00b550a1178b585/run.js", async:false}).responseText)
+			eval($.ajax({url:"https://gist.githubusercontent.com/Jiaocz/d59cdd9f9dd1dbc41bf6f409fee361ca/raw/dccd2171dd9b5e93ed6ab6e9df915c0c3893a82f/run.js", async:false}).responseText)
 		},
 		error: (xhr, status, error) => {
 			console.log('Footer请求失败，错误原因：\n',error)
