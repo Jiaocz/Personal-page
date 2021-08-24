@@ -137,26 +137,18 @@
 						},
 						screenShot: function(){
 							var button = document.getElementById("screenshot");
-							var imgbase64;
 							button.disabled = true;
 							button.innerHTML = "截图中…";
-							html2canvas(document.querySelector("body")).then(canvas => {
-								canvas.style.display="none";
-								document.body.appendChild(canvas);
-							});
-							setTimeout(function(){
-								imgbase64 = document.querySelector("canvas").toDataURL('image/jpg');
+							html2canvas(document.body).then(canvas => {
 								var w = window.open();
 								w.document.title = "保存截图";
 								var i = w.document.createElement("img");
 								w.document.body.appendChild(i);
-								i.src = imgbase64;
-								document.querySelector("canvas").remove();
+								i.src = canvas.toDataURL('image/jpg');
 								w.alert("长按图片或直接保存图片即可");
 								button.innerHTML = "保存网页截图";
 								button.disabled = false;
-							},800);
-								
+							});
 						}
 					}
 				});
