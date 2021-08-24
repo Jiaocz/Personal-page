@@ -56,7 +56,6 @@
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { 
 						document.body.className = document.body.className.replace(/\bis-preload\b/, ''); 
-						document.querySelector("iframe[name='GitHubStar']").src = "https://ghbtns.com/github-btn.html?user=Jiaocz&repo=Personal-page&type=star&count=false"; 
 					});
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
