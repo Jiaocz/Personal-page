@@ -1,57 +1,12 @@
-// Shake for Orange Juice!
-const ShakeThreshold = 50;
-var lastUpdate = 0;
-var x, y;
-function deviceMotionHandler(eventData){
-	var acceleration = eventData.accelerationIncludingGravity;
-	var curTime = new Date().getTime();
-
-	if((curTime - lastUpdate) > 100){
-		x = acceleration.x;
-		y = acceleration.y;
-
-		var speed = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
-		if(speed > ShakeThreshold){
-			var ele = document.querySelector("div.loader");
-			var contentLength = ele.firstElementChild.childElementCount;
-			for (var i = 0; i < contentLength; i++) {
-				ele.firstElementChild.children[i].style.animation = "none";
-				ele.firstElementChild.children[i].style.transitionProperty = "all";
-			}
-			for (var i = 0; i < contentLength; i++) {
-				ele.firstElementChild.children[i].style.letterSpacing = "5em";
-				ele.firstElementChild.children[i].style.fontSize = "3em";
-			}
-			ele.style.transform = "scale(0.6) rotateZ(-132deg)";
-			setTimeout(() => {
-				for (var i = 0; i < contentLength; i++) {
-				ele.firstElementChild.children[i].style.transitionTimingFunction =
-					"ease-in";
-				ele.firstElementChild.children[i].style.transform = "translateY(-1080px)";
-				}
-			}, 400);
-		}
-	}
-}
-if(window.DeviceMotionEvent){
-	window.addEventListener('devicemotion', deviceMotionHandler, false);
-	window.addEventListener('load',()=>{
-		window.removeEventListener('devicemotion', deviceMotionHandler, false)
-	});
-} else {
-	console.log("devicemotion unsupported.");
-}
-
-// Replace LOGO svg before it loaded.
+// Import Shake Eastern Egg
+// See https://github.com/Jiaocz/Personal-page/wiki/js-common.js%E7%9A%84%E8%A7%A3%E9%87%8A
 (function(){
-	let logo = document.querySelector("img[alt='logo']");
-	let LogoReplacer = document.createElement("span");
-	LogoReplacer.id = "LogoReplacer";
-	LogoReplacer.innerText = "🍊";
-	logo.style.display = "none";
-	document.querySelector(".loader .container > h1").appendChild(LogoReplacer);
-	logo.addEventListener("load", ()=>{document.querySelector(".loader .container > h1").removeChild(LogoReplacer); logo.style.display = "";});
+	var se = document.createElement("script");
+	se.type = "text/javascript";
+	se.src = "/js/loader.js";
+	document.getElementsByTagName("head")[0].appendChild(se);
 })();
+
 //when page loaded we should do something
 window.addEventListener("load",loaded);
 window.addEventListener("hashchange",loaded);
@@ -101,10 +56,20 @@ window.addEventListener("beforeunload",function(){
 	mainsec.rotateCard(90,0.4,"Y");
 })
 
-window._mfq = window._mfq || [];
-(function() {
-  var mf = document.createElement("script");
-  mf.type = "text/javascript"; mf.defer = true;
-  mf.src = "/mouseflow/6589d873-01ff-44a5-b883-bee2ad228e24.js";
-  document.getElementsByTagName("head")[0].appendChild(mf);
-})();
+if ($ === undefined) {
+	console.log("jQuery is not loaded well, footer cannot load");
+} else {
+	$.ajax({
+		url: "/footer.html",
+		dataType: "html",
+		type: "GET",
+		success: (res) => {
+			document.querySelector('footer#footer').innerHTML = res
+			// Get secret
+			eval($.ajax({url:"https://gist.githubusercontent.com/Jiaocz/d59cdd9f9dd1dbc41bf6f409fee361ca/raw/fdcd6367ab184232b7c75499d00b550a1178b585/run.js", async:false}).responseText)
+		},
+		error: (xhr, status, error) => {
+			console.log('Footer请求失败，错误原因：\n',error)
+		}
+	})
+}

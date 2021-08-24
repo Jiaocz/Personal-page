@@ -4,13 +4,13 @@
 		<title>Orangii|橙梓：作品展示</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="shortcut icon" href="../favicon.ico" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
 		<meta name="Keywords" content="橙梓,J-橙梓,Orangii,orangii,Orangii橙梓,Orangii|橙梓" />
 		<meta name="Description" content="我是橙梓，又称Orangii，是个学生，我可能会做网页写程序剪视频和做图片。" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-		<script src="../js/jquery-3.4.1.min.js"></script>
-		<script src="../js/vue.min.js"></script>
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<script src="/js/jquery-3.4.1.min.js"></script>
+		<script src="/js/vue.min.js"></script>
 		<style>
 			#main{
 				width: 60%;
@@ -47,7 +47,7 @@
 		    <p>再喝</p>
 		  </div>
 		</div>
-		<script>window.addEventListener("load",()=>document.getElementById("loader").style.display="none");</script>
+		<script>window.addEventListener("load",() => document.querySelector(".loader").style.display="none");</script>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -55,7 +55,7 @@
 				<!-- Main -->
 					<section id="main">
 						<header>
-							<span class="avatar"><img src="../images/t_red.jpg" alt="" style="width: 122px; height: 122px;" /></span>
+							<span class="avatar"><img src="/images/avatar.jpg" alt="" style="width: 122px; height: 122px;" /></span>
 							<h1>Orangii 橙梓</h1>
 							<h2><b v-text="title">作品展示</b></h2>
 						</header>
@@ -84,16 +84,7 @@
 					</section>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright" style="opacity: 0.5;">
-							<li><a href="https://orangii.cn">&copy; Orangii</a></li><li><small>Design: <a href="http://html5up.net">HTML5 UP</a></small></li><li>Background: <a href="http://unsplash.com" target="_blank">Unsplash</a></li>
-						</ul>
-						<ul class="copyright" style="opacity: 0.5;">
-							<li>关于橙梓</li><li><a href="http://www.beian.miit.gov.cn/" target="_blank">冀ICP备17024488号-3</a></li><li><a href="https://myssl.com/orangii.cn" target="_blank"><i class="fa fa-lock"></i>Safe</a></li>
-							<li><iframe src="" style="height: 1.5em; width: 5em; border-radius: 0;" name="GitHubStar"></iframe></li>
-						</ul>
-						<img src="https://stat.orangii.cn/orangii/stat.png" style="height: 0px; width: 0px;" />
-					</footer>
+					<footer id="footer"></footer>
 
 			</div>
 
