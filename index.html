@@ -289,7 +289,7 @@
 				function loaded(){
 					timeout = FirstTriggered ? 1200 : 0;
 					var page = getQueryVariable("page");
-					if(page>=mainsec.startPage-1&&page<=mainsec.endPage-1&&page){
+					if(page>=mainsec.startPage&&page<=mainsec.endPage&&page){
 						var m = mainsec
 						mainsec.nowPage = page - 1;
 						setTimeout(function(){
