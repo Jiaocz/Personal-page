@@ -3,7 +3,6 @@
   <a href="https://github.com/Jiaocz/Personal-page/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jiaocz/personal-page" /></a>&nbsp;
   <a href="https://github.com/Jiaocz/Personal-page/releases"><img src="https://img.shields.io/github/v/release/jiaocz/personal-page.svg" /></a>&nbsp;
   <a href="https://github.com/Jiaocz/Personal-page/commits/master"><img src="https://img.shields.io/github/commits-since/Jiaocz/personal-page/latest" /></a>&nbsp;
-  <a href="https://github.com/Jiaocz/Personal-page/commits/master"><img src="https://img.shields.io/github/commit-activity/m/Jiaocz/personal-page" /></a>&nbsp;
   <a href="https://github.com/Jiaocz/Personal-page/pulse"><img src="https://visitor-badge.glitch.me/badge?page_id=Jiaocz.Personal-page" /></a>&nbsp;
   <a href="https://github.com/Jiaocz/Personal-page"><img src="https://img.shields.io/github/stars/jiaocz/personal-page?style=social" /></a>
 </p>
