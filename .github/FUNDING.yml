@@ -1,6 +1,6 @@
 # These are supported funding model platforms
 
-custom: ['https://orangii.cn/donate.html']# Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
+custom: ['orangii.cn/donate.html']# Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
 github: # Replace with up to 4 GitHub Sponsors-enabled usernames e.g., [user1, user2]
 patreon: 'ii'# Replace with a single Patreon username
 open_collective: # Replace with a single Open Collective username
